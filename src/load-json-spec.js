@@ -1,10 +1,3 @@
-import assert from 'assert';
-
-describe('test setup', () => {
-  it('works?', () => {
-    assert(true);
-  });
-});
 import {promiseThat, isFulfilled, hasProperty} from 'hamjest';
 
 const KATAS_URL = 'http://katas.tddbin.com/katas/es6/language/__grouped__.json';
