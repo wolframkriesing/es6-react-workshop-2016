@@ -1,0 +1,19 @@
+{
+  "name": "es6-react-workshop-2016",
+  "version": "1.0.0",
+  "description": "ES6 in use with react.js (Feb 2016)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolframkriesing/es6-react-workshop-2016.git"
+  },
+  "author": "Wolfram Kriesing <wolfram@kriesing.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wolframkriesing/es6-react-workshop-2016/issues"
+  },
+  "homepage": "https://github.com/wolframkriesing/es6-react-workshop-2016#readme"
+}
