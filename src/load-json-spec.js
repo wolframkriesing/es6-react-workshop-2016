@@ -34,5 +34,11 @@ function loadKatasFrom(url) {
     .catch(() => {
       throw 'Error loading katas.'
     })
+    .then(groupedKatas => {
+      if ('groups' in groupedKatas) {
+        return groupedKatas;
+      }
+      throw 'Invalid kata data.'
+    })
   ;
 }
