@@ -4,6 +4,8 @@ import {GROUPED_KATAS_URL} from './config.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import KataGroupsComponent from './components/kata-groups';
+
 class Page extends React.Component {
   render() {
     const katas = this.props.katas;
@@ -11,7 +13,7 @@ class Page extends React.Component {
     return (
       <div>
         <h1>All ES6 katas</h1>
-        {groupNames.map(groupName => <h2>{groupName}</h2>)}
+        <KataGroupsComponent groupNames={groupNames} />
       </div>
     );
   }
