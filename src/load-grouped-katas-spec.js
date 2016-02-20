@@ -6,10 +6,10 @@ import {
   isRejectedWith,
 } from 'hamjest';
 import GroupedKatas from './load-grouped-katas';
-
-const ES6_KATAS_URL_PREFIX = 'http://katas.tddbin.com/katas/es6/language/';
-const GROUPED_KATAS_URL = ES6_KATAS_URL_PREFIX + '__grouped__.json';
-const ALL_KATAS_URL = ES6_KATAS_URL_PREFIX + '__all__.json';
+import {
+  GROUPED_KATAS_URL,
+  ALL_KATAS_URL,
+} from './config';
 
 function loadGroupedKatasFrom(url) {
   return new GroupedKatas().load(url);
