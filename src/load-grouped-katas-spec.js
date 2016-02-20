@@ -4,6 +4,7 @@ import {
   hasProperty,
   isRejectedWith,
 } from 'hamjest';
+import {loadGroupedKatasFrom} from './load-grouped-katas';
 
 const ES6_KATAS_URL_PREFIX = 'http://katas.tddbin.com/katas/es6/language/';
 const GROUPED_KATAS_URL = ES6_KATAS_URL_PREFIX + '__grouped__.json';
@@ -26,24 +27,3 @@ describe('load the katas from katas.tddbin.com', () => {
     );
   });
 });
-
-import fetch from 'node-fetch';
-
-function loadData(url) {
-  return fetch(url)
-    .then(response => response.json())
-    .catch(() => { throw 'Error loading katas.'; });
-}
-
-function verifyData(groupedKatas) {
-  if ('groups' in groupedKatas) {
-    return groupedKatas;
-  }
-  throw 'Invalid kata data.';
-}
-
-function loadGroupedKatasFrom(url) {
-  return loadData(url)
-    .then(verifyData)
-  ;
-}
