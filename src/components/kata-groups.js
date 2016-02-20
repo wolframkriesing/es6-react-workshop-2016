@@ -45,6 +45,16 @@ export default class KataGroupsComponent extends React.Component {
         </div>
       </div>
 
+      <Kata />
+
+    </div>
+
+  }
+}
+
+class Kata extends React.Component {
+  render() {
+    return (
       <div id="main" className="pure-u-1">
         <div className="email-content">
           <div className="email-content-header pure-g">
@@ -66,9 +76,6 @@ export default class KataGroupsComponent extends React.Component {
           </div>
         </div>
       </div>
-
-
-    </div>
-
+    );
   }
 }
