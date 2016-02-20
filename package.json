@@ -4,7 +4,7 @@
   "description": "ES6 in use with react.js (Feb 2016)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/wolframkriesing/es6-react-workshop-2016/issues"
   },
-  "homepage": "https://github.com/wolframkriesing/es6-react-workshop-2016#readme"
+  "homepage": "https://github.com/wolframkriesing/es6-react-workshop-2016#readme",
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
 }
