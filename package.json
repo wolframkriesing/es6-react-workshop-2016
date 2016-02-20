@@ -4,7 +4,7 @@
   "description": "ES6 in use with react.js (Feb 2016)",
   "main": "index.js",
   "scripts": {
-    "test": "mocha src --compilers js:babel-register",
+    "test": "npm run lint && mocha src --compilers js:babel-register",
     "lint": "eslint src"
   },
   "repository": {
