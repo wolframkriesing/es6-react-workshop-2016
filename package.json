@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run lint && mocha src --compilers js:babel-register",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "build:app": "cp src/index.js dist/index.js",
+    "build:html": "cp src/index.html dist",
+    "build": "mkdir -p dist; npm run build:app && npm run build:html"  
   },
   "repository": {
     "type": "git",
