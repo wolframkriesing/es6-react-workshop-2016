@@ -1,10 +1,11 @@
+/* global describe it */
 import {
-  promiseThat, 
-  fulfilled, 
+  promiseThat,
+  fulfilled,
   hasProperty,
   isRejectedWith,
 } from 'hamjest';
-import {loadGroupedKatasFrom} from './load-grouped-katas';
+import { loadGroupedKatasFrom } from './load-grouped-katas';
 
 const ES6_KATAS_URL_PREFIX = 'http://katas.tddbin.com/katas/es6/language/';
 const GROUPED_KATAS_URL = ES6_KATAS_URL_PREFIX + '__grouped__.json';

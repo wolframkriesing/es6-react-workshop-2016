@@ -2,8 +2,10 @@ import fetch from 'node-fetch';
 
 function loadData(url) {
   return fetch(url)
-    .then(response => response.json())
-    .catch(() => { throw 'Error loading katas.'; });
+  .then(response => response.json())
+  .catch(() => {
+    throw 'Error loading katas.';
+  });
 }
 
 function verifyData(groupedKatas) {
