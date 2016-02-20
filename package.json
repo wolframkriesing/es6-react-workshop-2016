@@ -9,7 +9,9 @@
     "build:app": "browserify src/index.js --transform=babelify --outfile=dist/index.js",
     "build:html": "cp src/index.html dist; npm run build:vendor-stuff",
     "build:vendor-stuff": "cp -R vendor/pure-layout-email/css dist; cp -R vendor/pure-layout-email/img dist",
-    "build": "mkdir -p dist; npm run build:app && npm run build:html"
+    "build": "mkdir -p dist; npm run build:app && npm run build:html",
+    "watch": "npm run watch:build:app",
+    "watch:build:app": "chokidar 'src' -c 'npm run build:app'"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,8 @@
     "babel-register": "^6.5.2",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
+    "chokidar": "^1.4.2",
+    "chokidar-cli": "^1.2.0",
     "eslint": "^2.2.0",
     "eslint-config-eslint": "^3.0.0",
     "eslint-plugin-react": "^4.0.0",
