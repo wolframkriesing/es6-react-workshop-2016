@@ -5,17 +5,24 @@ import {
   isRejectedWith,
 } from 'hamjest';
 
-const KATAS_URL = 'http://katas.tddbin.com/katas/es6/language/__grouped__.json';
+const ES6_KATAS_URL_PREFIX = 'http://katas.tddbin.com/katas/es6/language/';
+const GROUPED_KATAS_URL = ES6_KATAS_URL_PREFIX + '__grouped__.json';
+const ALL_KATAS_URL = ES6_KATAS_URL_PREFIX + '__all__.json';
 
 describe('load the katas from katas.tddbin.com', () => {
   it('works', () => {
-    return promiseThat(loadKatasFrom(KATAS_URL),
+    return promiseThat(loadKatasFrom(GROUPED_KATAS_URL),
       fulfilled(hasProperty('groups'))
     );
   });
   it('throws when data cant be loaded', () => {
     return promiseThat(loadKatasFrom('invalid URL'),
       isRejectedWith('Error loading katas.')
+    );
+  });
+  it('throws when the wrong data are loaded', () => {
+    return promiseThat(loadKatasFrom(ALL_KATAS_URL),
+      isRejectedWith('Invalid kata data.')
     );
   });
 });
