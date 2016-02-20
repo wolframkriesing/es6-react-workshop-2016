@@ -3,6 +3,7 @@ import {GROUPED_KATAS_URL} from './config.js';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import ReactDOMServer from 'react-dom/server'; //for server-side rendering
 
 import KataGroupsComponent from './components/kata-groups';
 
@@ -23,4 +24,8 @@ new GroupedKatas()
   .load(GROUPED_KATAS_URL)
   .then(groupedKatas => {
     ReactDOM.render(<Page katas={groupedKatas}/>, document.getElementById('app'));
+    // console.log(ReactDOMServer.renderToString(<Page katas={groupedKatas}/>)); // for server-side rendering
   });
+
+// call this file using `babel-node src/index.js > dist/index.html` to create a server-side 
+// rendered HTML
