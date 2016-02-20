@@ -5,7 +5,7 @@ import {
   hasProperty,
   isRejectedWith,
 } from 'hamjest';
-import GroupedKatas from './load-grouped-katas';
+import GroupedKatas from './grouped-katas';
 import {
   GROUPED_KATAS_URL,
   ALL_KATAS_URL,
