@@ -5,11 +5,15 @@ import {
   hasProperty,
   isRejectedWith,
 } from 'hamjest';
-import { loadGroupedKatasFrom } from './load-grouped-katas';
+import GroupedKatas from './load-grouped-katas';
 
 const ES6_KATAS_URL_PREFIX = 'http://katas.tddbin.com/katas/es6/language/';
 const GROUPED_KATAS_URL = ES6_KATAS_URL_PREFIX + '__grouped__.json';
 const ALL_KATAS_URL = ES6_KATAS_URL_PREFIX + '__all__.json';
+
+function loadGroupedKatasFrom(url) {
+  return new GroupedKatas().load(url);
+}
 
 describe('load the katas from katas.tddbin.com', () => {
   it('works', () => {

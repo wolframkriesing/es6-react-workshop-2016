@@ -1,5 +1,11 @@
 import fetch from 'node-fetch';
 
+export default class GroupedKatas {
+  load(url) {
+    return loadGroupedKatasFrom(url);
+  }
+}
+
 function loadData(url) {
   return fetch(url)
   .then(response => response.json())
@@ -15,7 +21,7 @@ function verifyData(groupedKatas) {
   throw 'Invalid kata data.';
 }
 
-export function loadGroupedKatasFrom(url) {
+function loadGroupedKatasFrom(url) {
   return loadData(url)
     .then(verifyData)
   ;
