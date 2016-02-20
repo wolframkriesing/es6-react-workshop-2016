@@ -28,17 +28,22 @@ describe('load the katas from katas.tddbin.com', () => {
 });
 
 import fetch from 'node-fetch';
-function loadGroupedKatasFrom(url) {
+
+function loadData(url) {
   return fetch(url)
     .then(response => response.json())
-    .catch(() => {
-      throw 'Error loading katas.'
-    })
-    .then(groupedKatas => {
-      if ('groups' in groupedKatas) {
-        return groupedKatas;
-      }
-      throw 'Invalid kata data.'
-    })
+    .catch(() => { throw 'Error loading katas.'; });
+}
+
+function verifyData(groupedKatas) {
+  if ('groups' in groupedKatas) {
+    return groupedKatas;
+  }
+  throw 'Invalid kata data.';
+}
+
+function loadGroupedKatasFrom(url) {
+  return loadData(url)
+    .then(verifyData)
   ;
 }
