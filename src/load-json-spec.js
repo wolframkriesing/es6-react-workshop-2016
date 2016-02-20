@@ -11,24 +11,24 @@ const ALL_KATAS_URL = ES6_KATAS_URL_PREFIX + '__all__.json';
 
 describe('load the katas from katas.tddbin.com', () => {
   it('works', () => {
-    return promiseThat(loadKatasFrom(GROUPED_KATAS_URL),
+    return promiseThat(loadGroupedKatasFrom(GROUPED_KATAS_URL),
       fulfilled(hasProperty('groups'))
     );
   });
   it('throws when data cant be loaded', () => {
-    return promiseThat(loadKatasFrom('invalid URL'),
+    return promiseThat(loadGroupedKatasFrom('invalid URL'),
       isRejectedWith('Error loading katas.')
     );
   });
   it('throws when the wrong data are loaded', () => {
-    return promiseThat(loadKatasFrom(ALL_KATAS_URL),
+    return promiseThat(loadGroupedKatasFrom(ALL_KATAS_URL),
       isRejectedWith('Invalid kata data.')
     );
   });
 });
 
 import fetch from 'node-fetch';
-function loadKatasFrom(url) {
+function loadGroupedKatasFrom(url) {
   return fetch(url)
     .then(response => response.json())
     .catch(() => {
