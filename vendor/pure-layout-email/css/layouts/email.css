@@ -137,6 +137,9 @@ a {
     border-bottom: 1px solid #ddd;
     border-left: 6px solid transparent;
 }
+.email-item a {
+  color: black;
+}
     .email-avatar {
         border-radius: 3px;
         margin-right: 0.5em;
@@ -146,7 +149,6 @@ a {
         margin: 0;
     }
     .email-name {
-        text-transform: uppercase;
         color: #999;
     }
     .email-desc {
@@ -154,6 +156,7 @@ a {
         margin: 0.4em 0;
     }
 
+.email-item:hover,
 .email-item-selected {
     background: #eee;
 }
@@ -203,7 +206,7 @@ a {
 
     /* Move the layout over so we can fit the nav + list in on the left */
     #layout {
-        padding-left:500px; /* "left col (nav + list)" width */
+        padding-left:450px; /* "left col (nav + list)" width */
         position: relative;
     }
 
@@ -215,8 +218,8 @@ a {
         overflow: auto;
     }
     #nav {
-        margin-left:-500px; /* "left col (nav + list)" width */
-        width:150px;
+        margin-left:-450px; /* "left col (nav + list)" width */
+        width:200px;
         height: 100%;
     }
 
@@ -245,7 +248,7 @@ a {
         bottom: 0;
         left: 150px;
         overflow: auto;
-        width: auto; /* so that it's not 100% */
+        width: 100%;
     }
 
 }
@@ -259,8 +262,8 @@ a {
 
     /* This will take up the entire height, and be a little thinner */
     #list {
-        margin-left: -350px;
-        width:350px;
+        margin-left: -250px;
+        width:250px;
         height: 100%;
         border-right: 1px solid #ddd;
     }
@@ -272,4 +275,3 @@ a {
         padding: 0;
     }
 }
-
